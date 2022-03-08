@@ -1,15 +1,16 @@
 # https://github.com/terraform-providers/terraform-provider-azurerm/issues/7960
-
-provider "azurerm" {
-  use_msi                    = var.use_msi_to_authenticate
-  environment                = var.azure_environment
-  skip_provider_registration = true
-  features {
-    key_vault {
-      recover_soft_deleted_key_vaults = true
-      purge_soft_delete_on_destroy    = true
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=2.46.0"
     }
   }
+}
+provider "azurerm" {
+  features {}
+   subscription_id = "e09e0b8a-2806-4f26-97dd-c109016b013a"
+  
 }
 resource "azurerm_resource_group" "funcdeploy" {
   name     = "rg-${var.prefix}-function"
