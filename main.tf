@@ -9,10 +9,13 @@ terraform {
 }
 provider "azurerm" {
   features {}
-   subscription_id = "000000000000000000000000"
-    tenant_id ="0000000000000000000000000000"
   
 }
+
+ 
+
+ 
+
 resource "azurerm_resource_group" "funcdeploy" {
   name     = "rg-${var.prefix}-function"
   location = var.location
