@@ -83,8 +83,8 @@ resource "azurerm_function_app" "funcdeploy" {
         ftps_state = "Disabled"
     }
 
-  # Enable if you need Managed Identity
-  # identity {
-  #   type = "SystemAssigned"
-  # }
+   #Enable if you need Managed Identity
+  identity {
+     type = "SystemAssigned"
+   }
 }
